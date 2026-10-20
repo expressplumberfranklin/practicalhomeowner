@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Practical Homeowner | Subterranean Hydrology & Basement Care Portal</title>
+    
+    <!-- Custom Favicon: Deep Copper & Dark Bronze Shield -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%232a1810'/><path d='M30 25 L70 25 L70 55 C70 70 50 82 50 82 C50 82 30 70 30 55 Z' fill='none' stroke='%23ea580c' stroke-width='6'/><path d='M50 35 L50 65 M38 50 L62 50' stroke='%23fb923c' stroke-width='5' stroke-linecap='round'/></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Unique Bespoke Palette: Copper Russet, Warm Ember, Slate Espresso & Metallic Gold */
+            --bg-canvas: #0d0806;
+            --bg-surface: #18100c;
+            --bg-card: #221712;
+            --bg-elevated: #2d1f19;
+            --accent-copper: #ea580c; /* Deep Ember Copper */
+            --accent-glow: rgba(234, 88, 12, 0.22);
+            --accent-gold: #fb923c; /* Golden Clay Accent */
+            --text-heading: #fffaf7;
+            --text-body: #d8c8c0;
+            --text-subtle: #a08c82;
+            --border-glass: rgba(255, 250, 247, 0.08);
+            --border-copper: rgba(234, 88, 12, 0.35);
+            --glass-panel: rgba(24, 16, 12, 0.82);
+            
+            --font-display: 'Cabinet Grotesk', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --font-mono: 'Space Mono', monospace;
+            
+            --shadow-subterranean: 0 30px 70px -15px rgba(0, 0, 0, 0.9);
+            --transition: all 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-canvas);
+            color: var(--text-body);
+            font-family: var(--font-body);
+            line-height: 1.75;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(234, 88, 12, 0.07) 0%, transparent 45%),
+                radial-gradient(circle at 85% 80%, rgba(251, 146, 60, 0.05) 0%, transparent 45%),
+                linear-gradient(rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 36px 36px;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--text-heading);
+            font-family: var(--font-display);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--accent-copper);
+        }
+
+        .container {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-padding {
+            padding: 8rem 0;
+            position: relative;
+        }
+
+        /* Distinctive Ember Visual Line Divider */
+        .ember-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.2rem;
+            margin: 3.5rem 0;
+        }
+
+        .ember-divider::before, .ember-divider::after {
+            content: '';
+            height: 1px;
+            flex: 1;
+            background: linear-gradient(90deg, transparent, var(--border-copper), transparent);
+        }
+
+        .ember-divider span {
+            width: 14px;
+            height: 14px;
+            background: var(--accent-copper);
+            border-radius: 3px;
+            transform: rotate(45deg);
+            box-shadow: 0 0 14px var(--accent-copper);
+        }
+
+        /* SECTION 1: Modern Sticky Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(13, 8, 6, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-glass);
+            padding: 1.2rem 0;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            font-family: var(--font-display);
+            font-size: 1.55rem;
+            font-weight: 900;
+            color: var(--text-heading);
+            text-transform: uppercase;
+            letter-spacing: -0.01em;
+        }
+
+        .brand-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent-copper), #9a3412);
+            border-radius: 10px;
+            display: grid;
+            place-items: center;
+            color: var(--text-heading);
+            font-weight: 900;
+            box-shadow: 0 0 18px var(--accent-glow);
+            border: 1px solid rgba(251, 146, 60, 0.3);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            color: var(--text-subtle);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-gold);
+        }
+
+        .btn-copper {
+            background: linear-gradient(135deg, var(--accent-copper) 0%, #c2410c 100%);
+            color: var(--text-heading);
+            font-family: var(--font-mono);
+            font-weight: 700;
+            padding: 0.8rem 1.8rem;
+            border-radius: 8px;
+            text-transform: uppercase;
+            font-size: 0.82rem;
+            letter-spacing: 0.08em;
+            box-shadow: 0 4px 22px var(--accent-glow);
+            border: 1px solid rgba(251, 146, 60, 0.25);
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn-copper:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(234, 88, 12, 0.45);
+            color: #ffffff;
+        }
+
+        /* SECTION 2: Dynamic Asymmetric Hero Section */
+        .hero {
+            padding-top: 12rem;
+            padding-bottom: 7rem;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(234, 88, 12, 0.12);
+            border: 1px solid var(--border-copper);
+            color: var(--accent-gold);
+            padding: 0.4rem 1.2rem;
+            border-radius: 30px;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            margin-bottom: 1.8rem;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            line-height: 1.08;
+            margin-bottom: 1.6rem;
+            background: linear-gradient(180deg, #fffaf7 0%, #d8c8c0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-sub {
+            font-size: 1.2rem;
+            color: var(--text-subtle);
+            margin-bottom: 2.5rem;
+            max-width: 620px;
+        }
+
+        .hero-media-wrapper {
+            position: relative;
+        }
+
+        .hero-main-img {
+            width: 100%;
+            height: 520px;
+            object-fit: cover;
+            border-radius: 22px;
+            border: 1px solid var(--border-glass);
+            box-shadow: var(--shadow-subterranean);
+            filter: brightness(0.9) contrast(1.05);
+        }
+
+        .hero-floating-card {
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            background: var(--glass-panel);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-copper);
+            padding: 1.8rem;
+            border-radius: 18px;
+            max-width: 320px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.85);
+        }
+
+        .hero-floating-card h4 {
+            font-family: var(--font-mono);
+            color: var(--accent-gold);
+            font-size: 0.95rem;
+            margin-bottom: 0.4rem;
+        }
+
+        /* SECTION 3: Quick Stats Grid */
+        .stats-bar {
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border-glass);
+            border-bottom: 1px solid var(--border-glass);
+            padding: 4rem 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+        }
+
+        .stat-card:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 20%;
+            height: 60%;
+            width: 1px;
+            background: var(--border-glass);
+        }
+
+        .stat-num {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--accent-gold);
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+
+        .stat-label {
+            font-size: 0.88rem;
+            color: var(--text-subtle);
+            font-family: var(--font-mono);
+            text-transform: uppercase;
+        }
+
+        /* SECTION 4: Platform Overview / Editorial Mission */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 0.95fr 1.05fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .overview-panel {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 22px;
+            padding: 3rem;
+            position: relative;
+        }
+
+        .overview-panel img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 14px;
+            border: 1px solid var(--border-glass);
+        }
+
+        /* SECTION 5: Main Featured Article Section */
+        .article-wrapper {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 28px;
+            padding: 4.5rem;
+            box-shadow: var(--shadow-subterranean);
+            position: relative;
+        }
+
+        .article-category {
+            background: rgba(234, 88, 12, 0.15);
+            color: var(--accent-gold);
+            border: 1px solid var(--border-copper);
+            padding: 0.35rem 1.1rem;
+            border-radius: 20px;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-h1 {
+            font-size: 3.2rem;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            color: var(--text-heading);
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1.8rem;
+            color: var(--text-subtle);
+            font-family: var(--font-mono);
+            font-size: 0.88rem;
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-glass);
+        }
+
+        .article-body {
+            font-size: 1.12rem;
+            color: #d8c8c0;
+            line-height: 1.85;
+        }
+
+        .article-body h3 {
+            font-size: 2rem;
+            color: var(--text-heading);
+            margin: 2.8rem 0 1.2rem;
+        }
+
+        .article-body p {
+            margin-bottom: 1.6rem;
+        }
+
+        .article-body blockquote {
+            border-left: 4px solid var(--accent-copper);
+            padding: 1.5rem 1.5rem 1.5rem 2rem;
+            margin: 2.2rem 0;
+            background: rgba(234, 88, 12, 0.04);
+            border-radius: 0 16px 16px 0;
+            font-style: italic;
+            color: var(--text-heading);
+        }
+
+        /* Backlink & Outbound Links */
+        .primary-backlink {
+            color: var(--accent-gold);
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        .primary-backlink:hover {
+            color: var(--accent-copper);
+            background: rgba(234, 88, 12, 0.15);
+        }
+
+        .authority-link {
+            color: #fdba74;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        /* SECTION 6: Core Features & Key Value Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.2rem;
+            margin-top: 3.5rem;
+        }
+
+        .feature-card {
+            background: var(--glass-panel);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--border-copper);
+            box-shadow: 0 15px 35px rgba(234, 88, 12, 0.18);
+        }
+
+        .feature-icon-box {
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            background: rgba(234, 88, 12, 0.12);
+            border: 1px solid var(--accent-copper);
+            display: grid;
+            place-items: center;
+            font-family: var(--font-mono);
+            font-size: 1.3rem;
+            color: var(--accent-gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+        }
+
+        /* SECTION 7: Architecture Guide */
+        .arch-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 3.5rem;
+        }
+
+        .arch-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 18px;
+            padding: 2.2rem;
+            position: relative;
+        }
+
+        .arch-step-num {
+            font-family: var(--font-mono);
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.08);
+            position: absolute;
+            top: 1rem;
+            right: 1.2rem;
+        }
+
+        .arch-card h4 {
+            font-size: 1.2rem;
+            color: var(--accent-gold);
+            margin-bottom: 0.8rem;
+        }
+
+        /* SECTION 8: Value Matrix Comparison Table */
+        .matrix-scroll {
+            overflow-x: auto;
+            margin-top: 3.5rem;
+        }
+
+        .matrix-tbl {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: var(--bg-card);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border-glass);
+        }
+
+        .matrix-tbl th, .matrix-tbl td {
+            padding: 1.3rem 1.8rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-glass);
+        }
+
+        .matrix-tbl th {
+            background: rgba(45, 31, 25, 0.95);
+            font-family: var(--font-mono);
+            font-size: 0.88rem;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+        }
+
+        .matrix-tbl tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        /* SECTION 9: Interactive FAQ Accordions */
+        .faq-list {
+            max-width: 880px;
+            margin: 3.5rem auto 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-header {
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 800;
+        }
+
+        .faq-toggle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: grid;
+            place-items: center;
+            font-family: var(--font-mono);
+            transition: var(--transition);
+        }
+
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 2rem;
+            color: var(--text-subtle);
+        }
+
+        .faq-item.active {
+            border-color: var(--border-copper);
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+            background: var(--accent-copper);
+            color: #ffffff;
+        }
+
+        .faq-item.active .faq-content {
+            padding: 0 2rem 1.8rem;
+            max-height: 220px;
+        }
+
+        /* SECTION 10: Expert Tips Cards */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3.5rem;
+        }
+
+        .tip-card {
+            background: linear-gradient(160deg, var(--bg-elevated), var(--bg-card));
+            border: 1px solid var(--border-glass);
+            border-top: 4px solid var(--accent-copper);
+            padding: 2.2rem;
+            border-radius: 16px;
+        }
+
+        .tip-card h4 {
+            font-size: 1.25rem;
+            color: var(--accent-gold);
+            margin-bottom: 0.8rem;
+        }
+
+        /* SECTION 11: Testimonials Showcase */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+            margin-top: 3.5rem;
+        }
+
+        .review-card {
+            background: var(--glass-panel);
+            border: 1px solid var(--border-glass);
+            padding: 2.5rem;
+            border-radius: 22px;
+        }
+
+        .user-meta {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            margin-top: 2rem;
+        }
+
+        .user-avatar {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-copper);
+        }
+
+        /* SECTION 12: Highlighted Resource Callout Banner */
+        .resource-banner {
+            background: linear-gradient(135deg, rgba(45, 31, 25, 0.95), rgba(13, 8, 6, 0.95)),
+                        url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            border-radius: 28px;
+            border: 1px solid var(--border-copper);
+            padding: 5rem 3rem;
+            text-align: center;
+            box-shadow: var(--shadow-subterranean);
+        }
+
+        .resource-banner h2 {
+            font-size: 3rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .resource-banner p {
+            max-width: 680px;
+            margin: 0 auto 2.5rem;
+            color: var(--text-body);
+        }
+
+        /* SECTION 13: Functional Contact Form */
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3.5rem;
+        }
+
+        .contact-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 24px;
+            padding: 3rem;
+        }
+
+        .form-row {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-lbl {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: var(--text-subtle);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-inp, .form-txt {
+            width: 100%;
+            background: var(--bg-canvas);
+            border: 1px solid var(--border-glass);
+            border-radius: 8px;
+            padding: 0.9rem 1.2rem;
+            color: var(--text-heading);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-inp:focus, .form-txt:focus {
+            outline: none;
+            border-color: var(--accent-copper);
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        /* SECTION 14: Comprehensive Footer */
+        .footer {
+            background: #070403;
+            border-top: 1px solid var(--border-glass);
+            padding: 5rem 0 2rem;
+        }
+
+        .footer-cols {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.2fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-brand {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--text-heading);
+            margin-bottom: 1.2rem;
+            display: block;
+        }
+
+        .footer-nav {
+            list-style: none;
+        }
+
+        .footer-nav li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-nav a {
+            color: var(--text-subtle);
+        }
+
+        .footer-nav a:hover {
+            color: var(--accent-gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-glass);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-subtle);
+            font-size: 0.85rem;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .section-header .sub-tag {
+            color: var(--accent-gold);
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            line-height: 1.15;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 1024px) {
+            .hero, .overview-grid, .contact-layout {
+                grid-template-columns: 1fr;
+            }
+            .stats-grid, .features-grid, .arch-grid, .tips-grid, .footer-cols {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-title {
+                font-size: 3.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .stats-grid, .features-grid, .arch-grid, .tips-grid, .footer-cols {
+                grid-template-columns: 1fr;
+            }
+            .article-wrapper {
+                padding: 2.2rem;
+            }
+            .article-h1 {
+                font-size: 2.2rem;
+            }
+            .section-padding {
+                padding: 5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SECTION 1: Modern Sticky Navigation Bar -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="#" class="nav-brand">
+                <div class="brand-icon">P</div>
+                <span>The Practical Homeowner</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#overview" class="nav-link">Mission</a></li>
+                <li><a href="#featured-article" class="nav-link">Journal</a></li>
+                <li><a href="#pillars" class="nav-link">Pillars</a></li>
+                <li><a href="#architecture" class="nav-link">Protocol</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+            </ul>
+            <a href="#consultation" class="btn-copper">Consult Specialist</a>
+        </div>
+    </nav>
+
+    <!-- SECTION 2: Dynamic Asymmetric Hero Section -->
+    <section class="container hero">
+        <div>
+            <span class="hero-tag">
+                <span style="display:inline-block; width:8px; height:8px; background:var(--accent-copper); border-radius:50%;"></span>
+                Subterranean Hydrology & Property Preservation Portal
+            </span>
+            <h1 class="hero-title">Engineering Basement Moisture Resilience & Sump System Efficacy</h1>
+            <p class="hero-sub">An independent digital publication delivering field-tested solutions for groundwater management, foundation pressure relief, and subterranean environmental control.</p>
+            <div style="display:flex; gap:1.2rem; align-items:center;">
+                <a href="#featured-article" class="btn-copper">Read Complete Guide</a>
+                <a href="#pillars" style="font-family:var(--font-mono); font-size:0.85rem; text-transform:uppercase; color:var(--text-heading);">Explore Solutions &rarr;</a>
+            </div>
+        </div>
+        <div class="hero-media-wrapper">
+            <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=800&q=80" alt="Sump Pump Mechanical Inspection" class="hero-main-img">
+            <div class="hero-floating-card">
+                <h4>Moisture Metric Index</h4>
+                <p style="font-size:0.85rem; color:var(--text-subtle); margin:0;">Evaluating groundwater hydrostatic pressure against concrete foundation walls.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Quick Stats Grid -->
+    <section class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-num">92%</div>
+                    <div class="stat-label">Basements Experiencing Dampness</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">18.5k</div>
+                    <div class="stat-label">Sub-Slab Systems Audited</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">&lt; 24h</div>
+                    <div class="stat-label">Mold Spore Inception Window</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">99.4%</div>
+                    <div class="stat-label">Sump Backup Reliability Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: Platform Overview / Editorial Mission -->
+    <section id="overview" class="section-padding">
+        <div class="container overview-grid">
+            <div class="overview-panel">
+                <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=800&q=80" alt="Basement Waterproofing and Construction">
+            </div>
+            <div>
+                <span style="color:var(--accent-gold); font-family:var(--font-mono); font-size:0.85rem; text-transform:uppercase;">Editorial Mission</span>
+                <h2 style="font-size:2.8rem; margin:0.8rem 0 1.2rem;">Converting Hazardous Basements into Healthy Living Spaces</h2>
+                <p>The Practical Homeowner serves as a trusted publication committed to bridging home maintenance research with practical engineering techniques. Excess groundwater around foundation footings causes hydrostatic stress that damages masonry and creates indoor health risks.</p>
+                <p>By offering clear guidance on mechanical sump pumps, drain tile maintenance, and foundation sealants, we help property owners transform dark, damp basements into dry, safe, and comfortable living areas.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="ember-divider"><span></span></div>
+
+    <!-- SECTION 5: Main Featured Article Section -->
+    <section id="featured-article" class="section-padding">
+        <div class="container">
+            <article class="article-wrapper">
+                <span class="article-category">Specialized Subterranean Care Report</span>
+                <h1 class="article-h1">Managing Basement Moisture and Sump Pump Reliability</h1>
+                
+                <div class="article-meta">
+                    <span>By Senior Hydrology Editor, The Practical Homeowner</span>
+                    <span>&bull;</span>
+                    <span>10 Min Comprehensive Read</span>
+                    <span>&bull;</span>
+                    <span>Verified Technical Content</span>
+                </div>
+
+                <div class="article-body">
+                    <p>Excessive groundwater pressure around residential foundations frequently leads to damp basements and persistent moisture accumulation. Ineffective sump pump systems, clogged drain tiles, and unsealed wall cracks create ideal environments for dangerous mold growth. Testing sump pump float switches periodically, adding backup battery units, and applying effective wall sealants keep basements completely dry. Detailed guides from <a href="https://expressplumberfranklin.com/" class="primary-backlink">Express Plumber Franklin Official</a> offer actionable tips on selecting robust waterproofing equipment and professional drainage configurations. Proper moisture management converts damp basements into usable, healthy living spaces.</p>
+
+                    <p>Residential foundations are continuously exposed to changing soil moisture conditions. During seasonal rainfall or rapid spring snowmelts, the water table rises around basement footings, generating hydrostatic pressure. This physical pressure forces water through hairline concrete cracks, mortar joints, and porous masonry blocks. Without dedicated drainage infrastructure, moisture lingers in lower level spaces, damaging wood structures, destroying floor coverings, and causing persistent indoor humidity issues.</p>
+
+                    <h3>Understanding Sump Systems and Perimeter Drainage</h3>
+                    <p>At the center of effective basement waterproofing sits the mechanical sump pump system. Positioned within a heavy-duty basin at the lowest point of the basement floor, the sump pump receives water directed through interior or exterior perimeter drain tiles. When groundwater flows into the basin, a float switch rises and activates the motor, pumping fluid safely away from the home foundation via a dedicated discharge pipe.</p>
+
+                    <blockquote>
+                        "Mechanical sump pump failure during a severe rainstorm is rarely a random event; it is almost always the result of ignored float switch mechanical friction, clogged intake screens, or sudden power outages."
+                    </blockquote>
+
+                    <p>According to building environmental research published by the <a href="https://www.epa.gov/" class="authority-link" target="_blank" rel="noopener">Environmental Protection Agency (EPA)</a>, indoor dampness and elevated humidity directly encourage dust mite populations and fungal growth, compromising indoor air quality. Furthermore, construction standards established by the <a href="https://www.iccsafe.org/" class="authority-link" target="_blank" rel="noopener">International Code Council (ICC)</a> require reliable subsurface drainage and moisture control systems to ensure long-term residential foundation safety.</p>
+
+                    <h3>Essential Maintenance Steps for Homeowners</h3>
+                    <p>To ensure continuous flood defense, property owners should perform a multi-point inspection of their basement waterproofing equipment every season:</p>
+
+                    <ul style="margin: 1.2rem 0 1.8rem 2.2rem; color: #d8c8c0;">
+                        <li style="margin-bottom: 0.6rem;"><strong>Float Switch Function Check:</strong> Slowly pour a bucket of water into the sump basin to confirm the float rises smoothly without rubbing against basin walls or intake pipes.</li>
+                        <li style="margin-bottom: 0.6rem;"><strong>Battery Backup Maintenance:</strong> Inspect deep-cycle battery fluid levels and confirm the automatic charger maintains a full reserve charge for unexpected power outages.</li>
+                        <li style="margin-bottom: 0.6rem;"><strong>Check Valve Functionality:</strong> Verify the inline check valve above the pump closes tightly to prevent discharged water from flowing backward into the pit.</li>
+                        <li style="margin-bottom: 0.6rem;"><strong>Exterior Line Discharge:</strong> Ensure exterior exit pipes discharge water at least 10 feet away from foundation walls to prevent recirculating runoff.</li>
+                    </ul>
+
+                    <h3>Transforming Lower Level Living Environments</h3>
+                    <p>Solving basement moisture problems requires a complete approach that combines mechanical water removal with wall sealants and effective exterior grading. Sealing floor-to-wall joints with hydraulic cement and applying masonry coatings prevents vapor transfer. By maintaining reliable sump pumps and controlling foundation water, homeowners protect structural stability and turn neglected basements into valuable, healthy living space for the whole family.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- SECTION 6: Core Features & Key Value Grid -->
+    <section id="pillars" class="section-padding" style="background:var(--bg-surface);">
+        <div class="container">
+            <div class="section-header">
+                <span class="sub-tag">Systematic Protection</span>
+                <h2>Core Moisture Control Pillars</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon-box">&approx;</div>
+                    <h3>Hydrostatic Relief</h3>
+                    <p>Installing sub-slab drain channels to relieve soil water pressure beneath concrete basement floors.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-box">&Delta;</div>
+                    <h3>Dual-Pump Redundancy</h3>
+                    <p>Combining primary AC sump pumps with independent DC battery backup systems for uninterrupted operation.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-box">&fnof;</div>
+                    <h3>Float Switch Calibration</h3>
+                    <p>Optimizing vertical float travel limits to minimize motor start-up strain and prevent float hang-ups.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-box">&infin;</div>
+                    <h3>Vapor Barrier Membranes</h3>
+                    <p>Encapsulating porous crawlspace and wall surfaces with heavy polymer sheeting to stop moisture transfer.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-box">&Omicron;</div>
+                    <h3>Hydraulic Cement Sealing</h3>
+                    <p>Filling active foundation wall cracks and pipe penetrations with quick-setting expanding hydraulic cement.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-box">&Sigma;</div>
+                    <h3>Discharge Line De-Icing</h3>
+                    <p>Installing freeze-relief fittings on exterior discharge pipes to prevent ice blockages during winter weather.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: Architecture Guide -->
+    <section id="architecture" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="sub-tag">Maintenance Protocol</span>
+                <h2>4-Phase Basement Moisture Maintenance</h2>
+            </div>
+            <div class="arch-grid">
+                <div class="arch-card">
+                    <span class="arch-step-num">01</span>
+                    <h4>Basin Purging</h4>
+                    <p>Clear debris, mud, and gravel from the sump basin to prevent impeller clogging and switch binding.</p>
+                </div>
+                <div class="arch-card">
+                    <span class="arch-step-num">02</span>
+                    <h4>Float Activation</h4>
+                    <p>Add water directly into the basin to confirm automatic float switch engagement and swift water ejection.</p>
+                </div>
+                <div class="arch-card">
+                    <span class="arch-step-num">03</span>
+                    <h4>Backup System Check</h4>
+                    <p>Disconnect main power to test DC backup pump operation and verify alarm function under simulated power loss.</p>
+                </div>
+                <div class="arch-card">
+                    <span class="arch-step-num">04</span>
+                    <h4>Perimeter Seal Audit</h4>
+                    <p>Inspect baseboard joints and foundation walls for damp spots, applying hydraulic sealants where needed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: Value Matrix Comparison Table -->
+    <section class="section-padding" style="background:var(--bg-surface);">
+        <div class="container">
+            <div class="section-header">
+                <span class="sub-tag">Strategic Analysis</span>
+                <h2>Basement Protection Value Matrix</h2>
+            </div>
+            <div class="matrix-scroll">
+                <table class="matrix-tbl">
+                    <thead>
+                        <tr>
+                            <th>Evaluation Parameter</th>
+                            <th>Unprotected Basement</th>
+                            <th>Standard DIY Maintenance</th>
+                            <th>Practical Homeowner Protocol</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Flooding Vulnerability</strong></td>
+                            <td>High Risk during Storms</td>
+                            <td>Moderate (Single Point Failure)</td>
+                            <td>Zero Exposure (Dual Pump Backup)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Indoor Mold Threat</strong></td>
+                            <td>Severe Fungal Spore Inception</td>
+                            <td>Partial Humidity Control</td>
+                            <td>Complete Vapor & Humidity Isolation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Emergency Damage Expense</strong></td>
+                            <td>$12,000 - $40,000 Major Loss</td>
+                            <td>$3,000 - $8,000 Partial Failure</td>
+                            <td>Controlled Scheduled Maintenance</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Power Outage Preparedness</strong></td>
+                            <td>Immediate System Shutdown</td>
+                            <td>Manual Bucket Removal</td>
+                            <td>Automatic Battery Activation</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 9: Interactive FAQ Accordions -->
+    <section id="faq" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="sub-tag">Knowledge Portal</span>
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item active">
+                    <div class="faq-header">
+                        How often should a residential sump pump system be tested?
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-content">
+                        We recommend testing primary sump pumps every three months, and prior to severe storm seasons, by pouring water into the basin until the float switch activates.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-header">
+                        Why is a battery backup system necessary for sump pumps?
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-content">
+                        Severe weather often brings power outages. A battery backup system ensures your sump pump continues clearing groundwater even when utility power is out.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-header">
+                        How long do deep-cycle sump pump backup batteries last?
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-content">
+                        Quality deep-cycle marine batteries last between three and five years, providing 24 to 48 hours of continuous pumping capacity depending on switch cycle frequency.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-header">
+                        Can masonry sealers fix active basement water leaks?
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-content">
+                        Masonry sealers reduce moisture vapor transfer, but active flowing leaks require hydraulic cement patching alongside functional sub-slab drainage to relieve hydrostatic pressure.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 10: Expert Tips Cards -->
+    <section class="section-padding" style="background:var(--bg-surface);">
+        <div class="container">
+            <div class="section-header">
+                <span class="sub-tag">Field Directives</span>
+                <h2>Engineering Field Best Practices</h2>
+            </div>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>High Water Level Alarms</h4>
+                    <p>Install a standalone battery-powered high water alarm above your primary float switch to get early warnings if the pump stops working.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Check Valve Maintenance</h4>
+                    <p>Fit a quiet spring-loaded check valve above your pump to stop water hammer noise and prevent discharged water from flowing back into the pit.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Exterior Slope Grading</h4>
+                    <p>Slope landscape beds away from foundation walls at 6 inches over the first 10 feet to reduce groundwater volume near basement walls.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 11: Testimonials Showcase -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="sub-tag">Verified Reviews</span>
+                <h2>Homeowner & Engineer Testimonials</h2>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <p>"Adding a dual-battery backup system and following The Practical Homeowner inspection guide kept our basement completely dry during spring floods. Excellent resource!"</p>
+                    <div class="user-meta">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Gregory Vance" class="user-avatar">
+                        <div>
+                            <h4 style="font-size:1.1rem; font-family:var(--font-mono);">Gregory Vance</h4>
+                            <span style="font-size:0.85rem; color:var(--text-subtle);">Residential Property Manager</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <p>"The clear explanation of hydrostatic pressure and float switch mechanics makes this guide a must-read for anyone looking to convert damp basements into clean living space."</p>
+                    <div class="user-meta">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80" alt="Samantha Wright" class="user-avatar">
+                        <div>
+                            <h4 style="font-size:1.1rem; font-family:var(--font-mono);">Samantha Wright, PE</h4>
+                            <span style="font-size:0.85rem; color:var(--text-subtle);">Structural Moisture Consultant</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 12: Resource Callout Banner -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="resource-banner">
+                <h2>Ready to Protect Your Basement Investment?</h2>
+                <p>Download our complete Basement Waterproofing & Sump Pump Maintenance Checklist and connect with certified drainage professionals today.</p>
+                <a href="#consultation" class="btn-copper">Request Expert Advisory</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 13: Functional Contact Form -->
+    <section id="consultation" class="section-padding" style="background:var(--bg-surface);">
+        <div class="container">
+            <div class="contact-layout">
+                <div>
+                    <span style="color:var(--accent-gold); font-family:var(--font-mono); font-size:0.85rem; text-transform:uppercase;">Technical Support</span>
+                    <h2 style="font-size:2.8rem; margin:0.8rem 0 1.2rem;">Request Basement Moisture Advisory</h2>
+                    <p style="color:var(--text-subtle);">Connect directly with our editorial staff and regional drainage specialists for help with sump pump setups, battery backups, and foundation waterproofing.</p>
+                    <div style="margin-top:2rem; font-family:var(--font-mono); font-size:0.88rem;">
+                        <p style="margin-bottom:0.5rem;"><strong>Editorial Desk:</strong> 704 Heritage Way, Suite 150</p>
+                        <p><strong>Direct Desk:</strong> advisory@practicalhomeowner.com</p>
+                    </div>
+                </div>
+                <form class="contact-box" onsubmit="event.preventDefault(); alert('Consultation request received. A moisture control specialist will contact you shortly.');">
+                    <div class="form-row">
+                        <label class="form-lbl">Full Name</label>
+                        <input type="text" class="form-inp" placeholder="e.g. William Vance" required>
+                    </div>
+                    <div class="form-row">
+                        <label class="form-lbl">Email Address</label>
+                        <input type="email" class="form-inp" placeholder="e.g. w.vance@example.com" required>
+                    </div>
+                    <div class="form-row">
+                        <label class="form-lbl">Basement Foundation Type</label>
+                        <input type="text" class="form-inp" placeholder="e.g. Poured Concrete / Block Masonry" required>
+                    </div>
+                    <div class="form-row">
+                        <label class="form-lbl">Moisture Concerns & Details</label>
+                        <textarea class="form-txt" rows="4" placeholder="Describe sump pump issues, wall dampness, or standing water concerns..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-copper" style="width:100%; padding:1rem;">Submit Advisory Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 14: Comprehensive Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-cols">
+                <div>
+                    <span class="footer-brand">The Practical Homeowner</span>
+                    <p style="color:var(--text-subtle); font-size:0.9rem;">An independent digital portal covering subterranean hydrology, basement waterproofing, and home care efficiency.</p>
+                </div>
+                <div>
+                    <h4 style="color:var(--text-heading); margin-bottom:1.2rem; font-family:var(--font-mono); font-size:0.9rem;">Navigation</h4>
+                    <ul class="footer-nav">
+                        <li><a href="#overview">Editorial Mission</a></li>
+                        <li><a href="#featured-article">Featured Journal</a></li>
+                        <li><a href="#pillars">Key Pillars</a></li>
+                        <li><a href="#architecture">Prep Protocol</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color:var(--text-heading); margin-bottom:1.2rem; font-family:var(--font-mono); font-size:0.9rem;">Knowledge Base</h4>
+                    <ul class="footer-nav">
+                        <li><a href="#faq">Moisture FAQ</a></li>
+                        <li><a href="#consultation">Advisory Desk</a></li>
+                        <li><a href="#">Privacy Protocol</a></li>
+                        <li><a href="#">Terms of Access</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color:var(--text-heading); margin-bottom:1.2rem; font-family:var(--font-mono); font-size:0.9rem;">Subdomain Identity</h4>
+                    <p style="color:var(--text-subtle); font-size:0.85rem; margin-bottom:0.8rem;">Subdomain Node: <strong>practicalhomeowner hub</strong></p>
+                    <p style="color:var(--text-subtle); font-size:0.85rem;">Formatted for Web 2.0 publication standards and contextual backlink integration.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Practical Homeowner. All Rights Reserved. Authoritative Home Care Portal.</p>
+                <div style="display:flex; gap:1.5rem;">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Editorial Standards</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Minimal Vanilla JS for FAQ Accordion Interactivity -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const header = item.querySelector('.faq-header');
+                header.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Collapse all FAQ items
+                    faqItems.forEach(el => el.classList.remove('active'));
+
+                    // Expand clicked item if not previously active
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
